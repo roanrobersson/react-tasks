@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to right, rgb(22, 34, 42), rgb(58, 96, 115));
+    color: #FFF;
+    margin: 0;
+}
+
+.main-navbar {
+    text-align: center;
+}
+
+
+.main-navbar-title {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 2rem;
+}
+@media (min-width: 576px) {
+    .main-navbar-title {
+        margin-top: 20px;
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,22 @@
+.task-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@media (min-width: 576px) {
+    .task-grid {
+        margin-top: 20px;
+        margin: 40px 0 0 0;
+    }
+}
+
+.no-tasks-message {
+    font-size: 26px;
+    color: #FFF2;
+    margin-top: 100px;
+}
+@media (min-width: 576px) {
+    .no-tasks-message {
+        font-size: 32px;
+    }
+}
