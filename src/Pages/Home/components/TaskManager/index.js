@@ -35,6 +35,7 @@ const TaskManager = () => {
     const handleTaskFormSubmit = (e) => {
         e.preventDefault();
         let formatedText = inputText.trim();
+        if(formatedText === '') return;
         for(const t of tasks) {
             if (t.text === formatedText) return;
         };
