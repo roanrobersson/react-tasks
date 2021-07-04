@@ -1,21 +1,17 @@
-import {React, useState} from 'react';
+import React from 'react';
 import './style.css';
 
-const TaskForm = ({onSubmit}) => {
-    const [textInput, setTextInput] = useState("");
-
-    const handleInputChange = (e) => {
-        setTextInput(e.target.value);
-    };
+const TaskForm = ({text, onChange, onSubmit}) => {
+    const buttonStatusClass = (text === '') ? 'disabled' : '';
 
     return (
         <div className="task-form-container">
-            <form className="task-form" onSubmit={(e) => onSubmit(textInput, e)}>
+            <form className="task-form" onSubmit={onSubmit}>
                 <input className="task-form-input" type="text" 
                     placeholder="New task?" maxLength="43" 
-                    value={textInput} onChange={handleInputChange}>
+                    value={text} onChange={onChange}>
                 </input>
-                <button className="task-form-button">+</button>
+                <button className={'task-form-button ' + buttonStatusClass}>+</button>
             </form>
         </div>
     );

@@ -26,6 +26,7 @@
     border: none;
     border-right: 1px solid white;
     outline: none;
+    user-select: auto;
 }
 
 .task-form-button {
@@ -42,4 +43,9 @@
 
 .task-form-button:hover {
     background-color: #3da8ff;
+}
+
+.task-form-button.disabled {
+    color: rgb(196, 196, 196);
+    background-color: #a5adb1;
 }
