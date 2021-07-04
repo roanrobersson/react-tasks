@@ -1,0 +1,16 @@
+.header {
+    text-align: center;
+}
+
+.header-title {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+@media (min-width: 576px) {
+    .header-title {
+        margin-top: 20px;
+        font-size: 3rem;
+    }
+}

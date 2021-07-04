@@ -4,8 +4,13 @@ import TaskManager from './components/TaskManager';
 
 const Home = () => {
 
-    return(
-        <TaskManager />
+    return (
+        <div>
+            <div className="header">
+                <h1 className="header-title">Tasks</h1>
+            </div>
+            <TaskManager />
+        </div>
     )
 };
 

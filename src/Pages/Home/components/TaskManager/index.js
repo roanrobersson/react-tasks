@@ -2,15 +2,26 @@ import React, {useState} from 'react';
 import './taskManager.css';
 import TaskGrid from '../TaskGrid';
 import TaskForm from '../TaskForm';
+import ProgressBar from '../../../../core/components/ProgressBar';
 
 const TaskManager = () => {
     const [inputText, setInputText] = useState("");
+
     const [tasks, setTasks] = new useState([
         {text: 'Task1', pending: true},
         {text: 'Task2', pending: true},
         {text: 'Task3', pending: false},
         {text: 'Task4', pending: true},
     ]);
+
+    const progress = () => {
+        let pendings = 0;
+        for (const t of tasks) {
+            if(!t.pending) pendings++;
+        }
+        const p = 100 / tasks.length * pendings;
+        return Math.round(p);
+    };
 
     const handleTaskToggle = (task) => {
         const updatedTasks = tasks.map((t) => {
@@ -49,8 +60,9 @@ const TaskManager = () => {
 
     return (
         <div>
-            <TaskForm text={inputText} onChange={handleTaskFormChange} onSubmit={handleTaskFormSubmit}/>
-            <TaskGrid tasks={tasks} onTaskToggle={handleTaskToggle} onTaskDelete={handleTaskDelete}/>
+            <ProgressBar progress={progress()} />
+            <TaskForm text={inputText} onChange={handleTaskFormChange} onSubmit={handleTaskFormSubmit} />
+            <TaskGrid tasks={tasks} onTaskToggle={handleTaskToggle} onTaskDelete={handleTaskDelete} />
         </div>
     );
 };
