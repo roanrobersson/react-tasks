@@ -39,20 +39,19 @@ const TaskManager = () => {
         for(const t of tasks) {
             if (t.text === formatedText) return;
         };
-        const updatedTasks = tasks.slice()
-        updatedTasks.push({
+        const updatedTasks = [{
             text: formatedText, 
             pending: true
-        });
+        }, ...tasks.slice()];
         setTasks(updatedTasks);
         setInputText('');
     };
 
     return (
-        <>
+        <div>
             <TaskForm text={inputText} onChange={handleTaskFormChange} onSubmit={handleTaskFormSubmit}/>
             <TaskGrid tasks={tasks} onTaskToggle={handleTaskToggle} onTaskDelete={handleTaskDelete}/>
-        </>
+        </div>
     );
 };
 
