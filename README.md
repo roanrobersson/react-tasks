@@ -10,7 +10,7 @@ Task manager built with ReactJS
 
 # How to execute
 
-Prerequisites npm / yarn
+Prerequisites: npm / yarn
 
 ```bash
 # clone the repository
@@ -23,4 +23,4 @@ cd react-tasks
 npm install
 
 # execute the project
-npm run serve
+npm run start
