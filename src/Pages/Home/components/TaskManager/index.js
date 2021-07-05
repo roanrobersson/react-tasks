@@ -15,17 +15,17 @@ const TaskManager = () => {
     ]);
 
     const progress = () => {
+        if (tasks.length === 0) return 0;
         let pendings = 0;
-        for (const t of tasks) {
+        for(const t of tasks) {
             if(!t.pending) pendings++;
         }
-        const p = 100 / tasks.length * pendings;
-        return Math.round(p);
+        return Math.round(100 / tasks.length * pendings);
     };
 
     const handleTaskToggle = (task) => {
         const updatedTasks = tasks.map((t) => {
-            if (t === task) {
+            if(t === task) {
                 return {...t, pending: !t.pending}
             }
             return t;
